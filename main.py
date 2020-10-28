@@ -5,6 +5,32 @@ from classes.grandchildClass import grandchildClass
 from classes.childClass import childClass
 from classes.parentClass import parentClass
 
+
+
+
+counter = 0
+while True:
+  print('Marshall')
+  counter += 1
+  if counter > 14:
+    break
+
+
+
+for i in range(100):
+  print(i, sep=" ", end=" ")
+
+print("\n-----")
+
+
+for i in ["dog", "cat", "horse", "bird"]:
+  print(i, end=" ")
+
+print("\n----")
+
+
+
+
 def printMenu():
   moduleList={"1":"Slices","2":"Indexing Ord & Chr", "3":"Try/Except", "4":"FirstClass","5":"PrintTests","6":"ExampleClass", "7":"FamilyClasses","8":"Bitwise Logical Operators","9":"Bitwise Shift Operators","10":"Modules","11":"Leap Year"}
   for key in moduleList:
@@ -215,9 +241,11 @@ def runIndexingOrdChr():
 
 def runLeapYear():
   from classes.LeapYear import LeapYear
-
-  leapYear = LeapYear()
-  print(leapYear.determineYearStatus(input("Enter a year: ")))
+  continueAgain = 'y'
+  while continueAgain == 'y':
+    leapYear = LeapYear()
+    print(leapYear.determineYearStatus(input("Enter a year: ")))
+    continueAgain = input("another year? ")
 
 
 # Refactor this program to ask what part I want to execute and then execute that part
