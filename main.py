@@ -6,7 +6,7 @@ from classes.childClass import childClass
 from classes.parentClass import parentClass
 
 def printMenu():
-  moduleList={"1":"Slices","2":"Indexing Ord & Chr", "3":"Try/Except", "4":"FirstClass","5":"PrintTests","6":"ExampleClass", "7":"FamilyClasses","8":"Bitwise Logical Operators","9":"Bitwise Shift Operators","10":"Modules"}
+  moduleList={"1":"Slices","2":"Indexing Ord & Chr", "3":"Try/Except", "4":"FirstClass","5":"PrintTests","6":"ExampleClass", "7":"FamilyClasses","8":"Bitwise Logical Operators","9":"Bitwise Shift Operators","10":"Modules","11":"Leap Year"}
   for key in moduleList:
     print(key, moduleList[key], sep=". ")
 
@@ -60,14 +60,14 @@ def runPrintTests():
   print("----------------------")
   pClass = PrintTests()
   #pClass.printTest1()
-  pClass.printTest2()
+  #pClass.printTest2()
   pClass.printTest3()
-  pClass.printTest4()
-  pClass.printTest5()
-  pClass.printTest6()
-  pClass.printTest7()
-  pClass.printTest8()
-  pClass.printTest9()
+  #pClass.printTest4()
+  #pClass.printTest5()
+  #pClass.printTest6()
+  #pClass.printTest7()
+  #pClass.printTest8()
+  #pClass.printTest9()
   #pClass.printTest0()
   print("\n"*2)
 
@@ -213,6 +213,11 @@ def runIndexingOrdChr():
   #print(ords)
   print()
 
+def runLeapYear():
+  from classes.LeapYear import LeapYear
+
+  leapYear = LeapYear()
+  print(leapYear.determineYearStatus(input("Enter a year: ")))
 
 
 # Refactor this program to ask what part I want to execute and then execute that part
@@ -244,6 +249,8 @@ while True:
     runBitwiseShiftOperators()
   elif modToRun == "10":
     runModules()
+  elif modToRun == '11':
+    runLeapYear()
 
   runProgram = input("Do you want to run this program again? ")
   if runProgram != "y" and runProgram != 'y' and runProgram != "Yes" and runProgram != "yes":
